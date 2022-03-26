@@ -6,11 +6,30 @@
 /*   By: mtiesha < mtiesha@student.21-school.ru>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/24 13:02:21 by mtiesha           #+#    #+#             */
-/*   Updated: 2022/03/26 14:32:25 by mtiesha          ###   ########.fr       */
+/*   Updated: 2022/03/26 17:59:25 by mtiesha          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/fractol.h"
+
+double	ft_get_x(double num, t_cpx axis)
+{
+	double	ret;
+
+	if (0.0 == num)
+		ret = WH / 2;		
+	else if (-0.199999 < num)
+	{
+		ret = num * WH / axis.i;
+		printf("minus\n");
+	}
+	else
+	{
+		ret = num * WH / axis.r;
+		printf("plus\n");
+	}
+	return (ret);
+}
 
 double	ft_atoi_f(const char *str)
 {
