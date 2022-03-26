@@ -6,7 +6,7 @@
 /*   By: mtiesha < mtiesha@student.21-school.ru>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/23 11:07:19 by mtiesha           #+#    #+#             */
-/*   Updated: 2022/03/26 11:27:53 by mtiesha          ###   ########.fr       */
+/*   Updated: 2022/03/26 12:07:52 by mtiesha          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,29 +67,30 @@ typedef struct s_src
 }	t_src;
 
 /* Validation args */
-int		ft_valid(int ac, char **av, t_src *s);
+int			ft_valid(int ac, char **av, t_src *s);
 
 /* Utils */
-void	ft_erroer(char *str);
-void	ft_set_cpx(t_cpx *s, double r, double i);
+double		ft_atoi_f(const char *str);
+void		ft_erroer(char *str);
+void		ft_set_cpx(t_cpx *s, double r, double i);
 
 /* Init */
-void	ft_init(t_src *s);
+void		ft_init(t_src *s);
 
 /* Drow */
-void	ft_put_pixel(t_img *img, int x, int y, int color);
-void	ft_gate_color(int iter, t_src *s, double y, double x);
+void		ft_put_pixel(t_img *img, int x, int y, int color);
+void		ft_gate_color(int iter, t_src *s, double y, double x);
 
 /* Fractals */
-void	ft_burningship(t_src *s, t_serc serc, double p_y, double p_x);
-void	ft_mandelbrot(t_src *s, t_serc lims, double col, double row);
-void	ft_julia(t_src *s, t_serc serc, double p_y, double p_x);
+void		ft_burningship(t_src *s, t_serc serc, double p_y, double p_x);
+void		ft_mandelbrot(t_src *s, t_serc lims, double col, double row);
+void		ft_julia(t_src *s, t_serc serc, double p_y, double p_x);
 
 /* Render */
-void	ft_wasd(int keycode, t_src *s);
-int		ft_render(t_src *s);
-int		ft_scale_re(int flag, t_src *s);
-int		ft_handle_keypress(int keysym, t_src *data);
-int		ft_mouse_hook(int keycode, int x, int y, t_src *s);
+void		ft_wasd(int keycode, t_src *s);
+int			ft_render(t_src *s);
+int			ft_scale_re(int flag, t_src *s);
+int			ft_handle_keypress(int keysym, t_src *data);
+int			ft_mouse_hook(int keycode, int x, int y, t_src *s);
 
 #endif

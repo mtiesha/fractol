@@ -6,7 +6,7 @@
 /*   By: mtiesha < mtiesha@student.21-school.ru>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/24 13:02:21 by mtiesha           #+#    #+#             */
-/*   Updated: 2022/03/26 11:55:25 by mtiesha          ###   ########.fr       */
+/*   Updated: 2022/03/26 12:56:46 by mtiesha          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,8 @@ double	ft_atoi_f(const char *str)
 {
 	double	d1;
 	double	d2;
-	char	*tmp;
 	int		len;
 
-	tmp = (char *)str;
 	d1 = (double)ft_atoi(str);
 	while (*str && *str != '.')
 		str++;

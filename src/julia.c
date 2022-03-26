@@ -6,11 +6,21 @@
 /*   By: mtiesha < mtiesha@student.21-school.ru>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/23 11:07:19 by mtiesha           #+#    #+#             */
-/*   Updated: 2022/03/26 11:28:46 by mtiesha          ###   ########.fr       */
+/*   Updated: 2022/03/26 12:13:05 by mtiesha          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/fractol.h"
+
+static void	ft_sub_get_mouse(t_src *s)
+{
+	int	x;
+	int	y;
+
+	mlx_mouse_get_pos(s->mlx, s->mlx_win, &x, &y);
+	s->set_j.r = x; 
+	s->set_j.i = y;
+}
 
 static void	ft_jul_logic(t_x0y *cxp, t_serc *serc, double *z, int *iter)
 {
@@ -30,7 +40,7 @@ void	ft_julia(t_src *s, t_serc serc, double p_y, double p_x)
 	double	z;
 
 	if (s->set_flag)
-		mlx_mouse_get_pos(s->mlx, s->mlx_win, &s->set_j.r, &s->set_j.i);
+		ft_sub_get_mouse(s);
 	s->set_flag = 1;
 	while (p_y < WH)
 	{
