@@ -6,7 +6,7 @@
 /*   By: mtiesha < mtiesha@student.21-school.ru>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/20 13:49:05 by mtiesha           #+#    #+#             */
-/*   Updated: 2022/03/26 17:55:50 by mtiesha          ###   ########.fr       */
+/*   Updated: 2022/03/26 18:46:20 by mtiesha          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,12 +72,12 @@ static int	ft_is(char **av, int ac)
 
 static void	ft_gate_jul(t_src *s)
 {
-	double	x;
-	double	y;
+	int	x;
+	int	y;
 
 	x = ft_get_x(s->set_j.r, s->serc.max);
 	y = ft_get_x(s->set_j.i, s->serc.max);
-	ft_set_cpx(&s->set_j, x, y);
+	ft_set_cpx(&s->set_j, (double)(x), (double)(y));
 }
 
 int	ft_valid(int ac, char **av, t_src *s)
