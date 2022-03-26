@@ -6,7 +6,7 @@
 /*   By: mtiesha < mtiesha@student.21-school.ru>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/20 13:49:05 by mtiesha           #+#    #+#             */
-/*   Updated: 2022/03/26 08:48:25 by mtiesha          ###   ########.fr       */
+/*   Updated: 2022/03/26 10:38:13 by mtiesha          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,11 +77,11 @@ int	ft_valid(int ac, char **av, t_src *s)
 	i = ft_is(av, ac);
 	if (!i)
 		ft_erroer("Validation argv error, please check subject");
-	if (2 == i)
-		mlx_mouse_move((*s).mlx, (*s).mlx_win, ft_atoi(av[1]), 0);
-	else if (3 == i)
-		mlx_mouse_move((*s).mlx, (*s).mlx_win, ft_atoi(av[1]), ft_atoi(av[2]));
 	(*s).name = av[0];
 	ft_init(&(*s));
+	if (2 == i)
+		mlx_mouse_move((*s).mlx, (*s).mlx_win, ft_atoi(av[1]), WH / 2);
+	else if (3 == i)
+		mlx_mouse_move((*s).mlx, (*s).mlx_win, ft_atoi(av[1]), ft_atoi(av[2]));
 	return (i);
 }
