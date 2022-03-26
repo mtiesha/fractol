@@ -6,7 +6,7 @@
 /*   By: mtiesha < mtiesha@student.21-school.ru>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/23 11:07:19 by mtiesha           #+#    #+#             */
-/*   Updated: 2022/03/26 12:07:52 by mtiesha          ###   ########.fr       */
+/*   Updated: 2022/03/26 16:55:13 by mtiesha          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
 # include <fcntl.h>
 # include <math.h>
 
-# define WH 900
+# define WH 1000
 
 # define YELLOW 0x00FFFF00
 # define PURP 0x008B00FF
@@ -64,12 +64,14 @@ typedef struct s_src
 	t_serc		serc;
 	int			set_flag;
 	t_cpx		set_j;
+	int			sign_j;
 }	t_src;
 
 /* Validation args */
 int			ft_valid(int ac, char **av, t_src *s);
 
 /* Utils */
+double		ft_get_x(t_src *s, double num);
 double		ft_atoi_f(const char *str);
 void		ft_erroer(char *str);
 void		ft_set_cpx(t_cpx *s, double r, double i);

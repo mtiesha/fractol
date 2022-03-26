@@ -6,7 +6,7 @@
 /*   By: mtiesha < mtiesha@student.21-school.ru>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/20 13:49:05 by mtiesha           #+#    #+#             */
-/*   Updated: 2022/03/26 12:57:04 by mtiesha          ###   ########.fr       */
+/*   Updated: 2022/03/26 16:58:05 by mtiesha          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,6 +70,17 @@ static int	ft_is(char **av, int ac)
 	return (0);
 }
 
+static void	ft_gate_jul(t_src *s)
+{
+	int	x;
+	int	y;
+
+
+	x = ft_get_x(s, s->set_j.r);
+	y = ft_get_x(s, s->set_j.r);
+	ft_set_cpx(&s->set_j, x, y);
+}
+
 int	ft_valid(int ac, char **av, t_src *s)
 {
 	int	i;
@@ -80,8 +91,14 @@ int	ft_valid(int ac, char **av, t_src *s)
 	(*s).name = av[0];
 	ft_init(&(*s));
 	if (2 == i)
+	{
 		ft_set_cpx(&(*s).set_j, ft_atoi_f(av[1]), 0.0);
+		ft_gate_jul(s);
+	}
 	else if (3 == i)
+	{
 		ft_set_cpx(&(*s).set_j, ft_atoi_f(av[1]), ft_atoi_f(av[2]));
+		ft_gate_jul(s);
+	}
 	return (i);
 }

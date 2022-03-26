@@ -6,7 +6,7 @@
 /*   By: mtiesha < mtiesha@student.21-school.ru>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/23 11:07:19 by mtiesha           #+#    #+#             */
-/*   Updated: 2022/03/26 10:51:19 by mtiesha          ###   ########.fr       */
+/*   Updated: 2022/03/26 14:32:17 by mtiesha          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,11 +47,6 @@ int	main(int argc, char **argv)
 	mlx_loop_hook(s.mlx, &ft_render, &s);
 	mlx_hook(s.mlx_win, 2, 1L << 0, \
 		&ft_handle_keypress, &s);
-	if (10 < ft_strlen(s.name))
-	{
-		mlx_mouse_move(s.mlx, s.mlx_win, 50, WH / 2);
-		printf("%s\n", s.name);
-	}
 	mlx_mouse_hook(s.mlx_win, &ft_mouse_hook, &s);
 	mlx_loop(s.mlx);
 	mlx_destroy_display(s.mlx);

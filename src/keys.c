@@ -6,7 +6,7 @@
 /*   By: mtiesha < mtiesha@student.21-school.ru>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/23 11:07:19 by mtiesha           #+#    #+#             */
-/*   Updated: 2022/03/26 08:37:35 by mtiesha          ###   ########.fr       */
+/*   Updated: 2022/03/26 16:14:12 by mtiesha          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,13 +77,13 @@ int	ft_mouse_hook(int keycode, int x, int y, t_src *s)
 	double	a;
 	double	b;
 
-	if (keycode == 5)
+	if (keycode == 4)
 	{
 		a = x / (double)(WH);
 		b = y / (double)(WH);
 		ft_zoom_p(s, a, b);
 	}
-	else if (keycode == 4)
+	else if (keycode == 5)
 	{
 		a = x / (double)(WH);
 		b = y / (double)(WH);
