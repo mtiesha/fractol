@@ -6,7 +6,7 @@
 /*   By: mtiesha < mtiesha@student.21-school.ru>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/20 13:49:05 by mtiesha           #+#    #+#             */
-/*   Updated: 2022/03/26 18:46:20 by mtiesha          ###   ########.fr       */
+/*   Updated: 2022/03/26 19:45:35 by mtiesha          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,8 +75,8 @@ static void	ft_gate_jul(t_src *s)
 	int	x;
 	int	y;
 
-	x = ft_get_x(s->set_j.r, s->serc.max);
-	y = ft_get_x(s->set_j.i, s->serc.max);
+	x = ft_get_x(s->set_j.r, s->serc);
+	y = ft_get_x(s->set_j.i, s->serc);
 	ft_set_cpx(&s->set_j, (double)(x), (double)(y));
 }
 

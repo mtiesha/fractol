@@ -6,13 +6,13 @@
 /*   By: mtiesha < mtiesha@student.21-school.ru>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/24 13:02:21 by mtiesha           #+#    #+#             */
-/*   Updated: 2022/03/26 18:44:27 by mtiesha          ###   ########.fr       */
+/*   Updated: 2022/03/26 19:47:10 by mtiesha          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/fractol.h"
 
-double	ft_get_x(double num, t_cpx axis)
+double	ft_get_x(double num, t_serc axis)
 {
 	double	ret;
 
@@ -20,14 +20,14 @@ double	ft_get_x(double num, t_cpx axis)
 		ret = WH / 2;		
 	else if (0.00001 > num)
 	{
-		ret = num * WH / axis.i;
+		ret = num / axis.min.r;
 		printf("minus\n");
 		ret = fabs(ret);
 		printf("%f\n", ret);
 	}
 	else
 	{
-		ret = num * WH / axis.r;
+		ret = num * WH / axis.max.r;
 		printf("plus\n");
 		printf("%f\n", ret);
 	}

@@ -6,7 +6,7 @@
 /*   By: mtiesha < mtiesha@student.21-school.ru>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/23 11:07:19 by mtiesha           #+#    #+#             */
-/*   Updated: 2022/03/26 17:56:04 by mtiesha          ###   ########.fr       */
+/*   Updated: 2022/03/26 19:52:19 by mtiesha          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,13 +64,14 @@ typedef struct s_src
 	t_serc		serc;
 	t_cpx		set_j;
 	int			sign_j;
+	int			set_flag;
 }	t_src;
 
 /* Validation args */
 int			ft_valid(int ac, char **av, t_src *s);
 
 /* Utils */
-double		ft_get_x(double num, t_cpx axis);
+double		ft_get_x(double num, t_serc axis);
 double		ft_atoi_f(const char *str);
 void		ft_erroer(char *str);
 void		ft_set_cpx(t_cpx *s, double r, double i);
