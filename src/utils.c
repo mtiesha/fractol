@@ -6,7 +6,7 @@
 /*   By: mtiesha < mtiesha@student.21-school.ru>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/24 13:02:21 by mtiesha           #+#    #+#             */
-/*   Updated: 2022/03/25 19:27:03 by mtiesha          ###   ########.fr       */
+/*   Updated: 2022/03/26 08:44:34 by mtiesha          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,10 @@ void	ft_erroer(char *str)
 	exit(1);
 }
 
-void	ft_set_cpx(t_cpx *m, double r, double i)
+void	ft_set_cpx(t_cpx *s, double r, double i)
 {
-		(*m).r = r;
-		(*m).i = i;
+		(*s).r = r;
+		(*s).i = i;
 }
 
 void	ft_wasd(int keycode, t_src *s)

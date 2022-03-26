@@ -6,7 +6,7 @@
 /*   By: mtiesha < mtiesha@student.21-school.ru>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/23 11:07:19 by mtiesha           #+#    #+#             */
-/*   Updated: 2022/03/26 07:19:01 by mtiesha          ###   ########.fr       */
+/*   Updated: 2022/03/26 08:37:35 by mtiesha          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 static void	ft_recompil(t_src *s)
 {
 	mlx_destroy_image(s->mlx, s->data.img);
-	s->data.img = mlx_new_image(s->mlx, WH + s->scale, WH + s->scale);
+	s->data.img = mlx_new_image(s->mlx, WH, WH);
 	if (NULL == s->data.img)
 		ft_erroer("IMG Error");
 	s->data.addr = mlx_get_data_addr(s->data.img, \
@@ -36,13 +36,11 @@ int	ft_scale_re(int flag, t_src *s)
 	if (1 == flag)
 	{
 		s->serc.max_iter += 1;
-		s->scale += 0;
 		ft_recompil(s);
 	}
 	if (0 == flag)
 	{
 		s->serc.max_iter -= 1;
-		s->scale += 0;
 		ft_recompil(s);
 	}
 	return (0);
@@ -81,14 +79,14 @@ int	ft_mouse_hook(int keycode, int x, int y, t_src *s)
 
 	if (keycode == 5)
 	{
-		a = x / (double)((WH + (*s).scale));
-		b = y / (double)((WH + (*s).scale));
+		a = x / (double)(WH);
+		b = y / (double)(WH);
 		ft_zoom_p(s, a, b);
 	}
 	else if (keycode == 4)
 	{
-		a = x / (double)((WH + (*s).scale));
-		b = y / (double)((WH + (*s).scale));
+		a = x / (double)(WH);
+		b = y / (double)(WH);
 		ft_zoom_m(s, a, b);
 	}
 	return (0);

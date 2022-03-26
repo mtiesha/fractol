@@ -6,7 +6,7 @@
 /*   By: mtiesha < mtiesha@student.21-school.ru>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/23 11:07:19 by mtiesha           #+#    #+#             */
-/*   Updated: 2022/03/25 20:48:33 by mtiesha          ###   ########.fr       */
+/*   Updated: 2022/03/26 08:44:20 by mtiesha          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,6 @@ typedef struct s_serc
 {
 	t_cpx	min;
 	t_cpx	max;
-	t_cpx	jul;
 	double	max_iter;
 }	t_serc;
 
@@ -71,14 +70,14 @@ int		ft_valid(int ac, char **av, t_src *s);
 
 /* Utils */
 void	ft_erroer(char *str);
-void	ft_set_cpx(t_cpx *m, double r, double i);
+void	ft_set_cpx(t_cpx *s, double r, double i);
 
 /* Init */
 void	ft_init(t_src *s);
 
 /* Drow */
 void	ft_put_pixel(t_img *img, int x, int y, int color);
-void	ft_gate_color(int iter, t_src *m, double y, double x);
+void	ft_gate_color(int iter, t_src *s, double y, double x);
 
 /* Fractals */
 void	ft_burningship(t_src *s, t_serc serc, double p_y, double p_x);

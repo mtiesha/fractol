@@ -6,7 +6,7 @@
 /*   By: mtiesha < mtiesha@student.21-school.ru>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/20 13:49:05 by mtiesha           #+#    #+#             */
-/*   Updated: 2022/03/24 17:52:46 by mtiesha          ###   ########.fr       */
+/*   Updated: 2022/03/26 08:48:25 by mtiesha          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,7 +70,7 @@ static int	ft_is(char **av, int ac)
 	return (0);
 }
 
-int	ft_valid(int ac, char **av, t_src *m)
+int	ft_valid(int ac, char **av, t_src *s)
 {
 	int	i;
 
@@ -78,16 +78,10 @@ int	ft_valid(int ac, char **av, t_src *m)
 	if (!i)
 		ft_erroer("Validation argv error, please check subject");
 	if (2 == i)
-	{
-		(*m).serc.jul.r = (double)(ft_atoi(av[1]));
-		(*m).serc.jul.i = 1.0;
-	}
+		mlx_mouse_move((*s).mlx, (*s).mlx_win, ft_atoi(av[1]), 0);
 	else if (3 == i)
-	{
-		(*m).serc.jul.r = (double)(ft_atoi(av[1]));
-		(*m).serc.jul.i = (double)(ft_atoi(av[2]));
-	}
-	(*m).name = av[0];
-	ft_init(&(*m));
+		mlx_mouse_move((*s).mlx, (*s).mlx_win, ft_atoi(av[1]), ft_atoi(av[2]));
+	(*s).name = av[0];
+	ft_init(&(*s));
 	return (i);
 }
