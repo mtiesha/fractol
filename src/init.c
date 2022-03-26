@@ -6,7 +6,7 @@
 /*   By: mtiesha < mtiesha@student.21-school.ru>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/24 13:30:43 by mtiesha           #+#    #+#             */
-/*   Updated: 2022/03/26 10:36:38 by mtiesha          ###   ########.fr       */
+/*   Updated: 2022/03/26 11:10:38 by mtiesha          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 static void	ft_init_defolt(t_src *s)
 {
 	(*s).serc.max_iter = 50;
+	(*s).set_flag = 0;
 	ft_set_cpx(&(*s).serc.max, 2.0, 2.0);
 	ft_set_cpx(&(*s).serc.min, -2.0, -2.0);
 }

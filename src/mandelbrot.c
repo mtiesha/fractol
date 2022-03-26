@@ -6,7 +6,7 @@
 /*   By: mtiesha < mtiesha@student.21-school.ru>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/23 11:07:19 by mtiesha           #+#    #+#             */
-/*   Updated: 2022/03/26 08:36:05 by mtiesha          ###   ########.fr       */
+/*   Updated: 2022/03/26 11:12:09 by mtiesha          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,11 +29,11 @@ void	ft_mandelbrot(t_src *s, t_serc serc, double p_y, double p_x)
 	double	z;
 	t_x0y	cxp;
 
-	while (p_x < (WH + (*s).scale))
+	while (p_x < WH)
 	{
 		cxp.cx_i = serc.min.i + p_x / WH * (serc.max.i - serc.min.i);
 		p_y = 0;
-		while (p_y < (WH + (*s).scale))
+		while (p_y < WH)
 		{
 			cxp.cx_r = serc.min.r + p_y / WH * (serc.max.r - serc.min.r);
 			cxp.x = 0;

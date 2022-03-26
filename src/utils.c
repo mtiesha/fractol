@@ -6,11 +6,36 @@
 /*   By: mtiesha < mtiesha@student.21-school.ru>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/24 13:02:21 by mtiesha           #+#    #+#             */
-/*   Updated: 2022/03/26 08:44:34 by mtiesha          ###   ########.fr       */
+/*   Updated: 2022/03/26 11:55:25 by mtiesha          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/fractol.h"
+
+double	ft_atoi_f(const char *str)
+{
+	double	d1;
+	double	d2;
+	char	*tmp;
+	int		len;
+
+	tmp = (char *)str;
+	d1 = (double)ft_atoi(str);
+	while (*str && *str != '.')
+		str++;
+	if (str && *str == '.')
+		str++;
+	else
+		return (d1);
+	d2 = (double)ft_atoi(str);
+	len = ft_strlen(str);
+	while (len--)
+		d2 /= 10;
+	if (d1 >= 0 && str[0] != '-')
+		return (d1 + d2);
+	else
+		return (d1 - d2);
+}
 
 void	ft_erroer(char *str)
 {

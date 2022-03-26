@@ -6,7 +6,7 @@
 /*   By: mtiesha < mtiesha@student.21-school.ru>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/23 11:07:19 by mtiesha           #+#    #+#             */
-/*   Updated: 2022/03/24 20:11:31 by mtiesha          ###   ########.fr       */
+/*   Updated: 2022/03/26 11:28:46 by mtiesha          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,18 +27,18 @@ void	ft_julia(t_src *s, t_serc serc, double p_y, double p_x)
 {
 	t_x0y	cpx;
 	int		iter;
-	int		cx;
-	int		cy;
 	double	z;
 
-	mlx_mouse_get_pos(s->mlx, s->mlx_win, &cx, &cy);
+	if (s->set_flag)
+		mlx_mouse_get_pos(s->mlx, s->mlx_win, &s->set_j.r, &s->set_j.i);
+	s->set_flag = 1;
 	while (p_y < WH)
 	{
 		p_x = 0;
 		while (p_x < WH)
 		{
-			cpx.cx_r = serc.min.r + (double)cx / WH * (serc.max.r - serc.min.r);
-			cpx.cx_i = serc.min.i + (double)cy / WH * (serc.max.i - serc.min.i);
+			cpx.cx_r = serc.min.r + s->set_j.r / WH * (serc.max.r - serc.min.r);
+			cpx.cx_i = serc.min.i + s->set_j.i / WH * (serc.max.i - serc.min.i);
 			cpx.x = serc.min.r + (double)p_x / WH * (serc.max.r - serc.min.r);
 			cpx.y = serc.min.i + (double)p_y / WH * (serc.max.i - serc.min.i);
 			iter = 0;
