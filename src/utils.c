@@ -6,7 +6,7 @@
 /*   By: mtiesha < mtiesha@student.21-school.ru>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/24 13:02:21 by mtiesha           #+#    #+#             */
-/*   Updated: 2022/03/26 19:47:10 by mtiesha          ###   ########.fr       */
+/*   Updated: 2022/03/28 07:47:34 by mtiesha          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +17,11 @@ double	ft_get_x(double num, t_serc axis)
 	double	ret;
 
 	if (0.0 == num)
-		ret = WH / 2;		
+		ret = WH / 2;
 	else if (0.00001 > num)
 	{
-		ret = num / axis.min.r;
+		ret = (num - (axis.min.i)) * WH / axis.max.r;
 		printf("minus\n");
-		ret = fabs(ret);
 		printf("%f\n", ret);
 	}
 	else
