@@ -6,7 +6,7 @@
 /*   By: mtiesha < mtiesha@student.21-school.ru>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/24 13:02:21 by mtiesha           #+#    #+#             */
-/*   Updated: 2022/03/28 11:50:39 by mtiesha          ###   ########.fr       */
+/*   Updated: 2022/03/28 18:49:34 by mtiesha          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,25 +14,23 @@
 
 double	ft_atoi_f(const char *str)
 {
-	double	d1;
-	double	d2;
-	char	*c;
+	double	num_ud;
+	double	num_ad;
 	int		len;
 
-	c = (char *)str;
-	d1 = (double)ft_atoi(c);
-	while (c && *c != '.' && *c)
-		c++;
-	if (c && *c == '.')
-		c++;
-	d2 = (double)ft_atoi(c);
-	len = ft_strlen(c);
+	num_ud = (double)ft_atoi(str);
+	while (*str != '.')
+		str++;
+	str++;
+	num_ad = (double)ft_atoi(str);
+	len = ft_strlen(str);
 	while (len--)
-		d2 /= 10;
-	if (d1 >= 0 && str[0] != '-')
-		return (d1 + d2);
+		num_ad /= 10;
+	printf("%f %f\n", num_ud, num_ad);
+	if (num_ud >= 0 && str[0] != '-')
+		return (num_ud + num_ad);
 	else
-		return (d1 - d2);
+		return (num_ud - num_ad);
 }
 
 void	ft_erroer(char *str)

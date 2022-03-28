@@ -6,7 +6,7 @@
 /*   By: mtiesha < mtiesha@student.21-school.ru>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/23 11:07:19 by mtiesha           #+#    #+#             */
-/*   Updated: 2022/03/28 10:32:07 by mtiesha          ###   ########.fr       */
+/*   Updated: 2022/03/28 12:17:25 by mtiesha          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ static void	ft_sub_get_mouse(t_src *s)
 	int	y;
 
 	mlx_mouse_get_pos(s->mlx, s->mlx_win, &x, &y);
-	s->set_j.r = x; 
+	s->set_j.r = x;
 	s->set_j.i = y;
 }
 
