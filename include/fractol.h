@@ -6,7 +6,7 @@
 /*   By: mtiesha < mtiesha@student.21-school.ru>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/23 11:07:19 by mtiesha           #+#    #+#             */
-/*   Updated: 2022/03/28 11:59:25 by mtiesha          ###   ########.fr       */
+/*   Updated: 2022/03/28 20:27:56 by mtiesha          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
 # include <fcntl.h>
 # include <math.h>
 
-# define WH 800
+# define WH 500
 
 # define YELLOW 0x00FFFF00
 # define PURP 0x008B00FF

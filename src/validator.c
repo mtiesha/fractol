@@ -6,7 +6,7 @@
 /*   By: mtiesha < mtiesha@student.21-school.ru>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/20 13:49:05 by mtiesha           #+#    #+#             */
-/*   Updated: 2022/03/28 19:39:01 by mtiesha          ###   ########.fr       */
+/*   Updated: 2022/03/28 20:23:21 by mtiesha          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,13 +17,15 @@ static int	ft_vld_012(char *str)
 	int	i;
 
 	i = 0;
-	if (*str == '+' || *str == '-')
-		i++;
-	if (!str || *str == '.' || !ft_isdigit(*str) \
-	|| !(str[i] == '0' || str[i] == '1' || str[i] == '2') \
-	|| str[i + 1] && str[i + 1] != '.')
+	if (!str)
 		return (0);
-	return (1);
+	if (str[i] == '+' || str[i] == '-')
+		i++;
+	if (!ft_isdigit(str[i]))
+		return (0);
+	if ((str[i] == '0' || str[i] == '1' || str[i] == '2'))
+		return (1);
+	return (0);
 }
 
 static int	ft_vld_f(char *str)
@@ -33,18 +35,18 @@ static int	ft_vld_f(char *str)
 	i = 0;
 	if (!ft_vld_012(str))
 		return (0);
-	while (str[i] == '-' || str == '+')
+	while (str[i] == '-' || str[i] == '+')
 		i++;
-	while (str && str[i] != '.' && str[i])
+	while (str[i] != '.' && str[i])
 	{
 		if (!ft_isdigit(str[i]))
 			return (0);
 		i++;
 	}
 	i++;
-	if (str[i] != '.' || !str[i + 1])
+	if (!str[i])
 		return (0);
-	while (str && str[i])
+	while (str[i])
 	{
 		if (!ft_isdigit(str[i]))
 			return (0);
