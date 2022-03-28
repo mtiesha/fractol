@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   keys.c                                             :+:      :+:    :+:   */
+/*   touch.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mtiesha < mtiesha@student.21-school.ru>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/23 11:07:19 by mtiesha           #+#    #+#             */
-/*   Updated: 2022/03/26 20:38:31 by mtiesha          ###   ########.fr       */
+/*   Updated: 2022/03/28 11:54:59 by mtiesha          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,30 +17,48 @@ static void	ft_recompil(t_src *s)
 	mlx_destroy_image(s->mlx, s->data.img);
 	s->data.img = mlx_new_image(s->mlx, WH, WH);
 	if (NULL == s->data.img)
+	{
+		mlx_destroy_display(s->mlx);
 		ft_erroer("IMG Error");
+	}
 	s->data.addr = mlx_get_data_addr(s->data.img, \
 			&s->data.bits_per_pixel, &s->data.line_length, \
 			&s->data.endian);
 	if (NULL == s->data.img)
+	{
+		mlx_destroy_display(s->mlx);
 		ft_erroer("IMG Fill(bpp etc) Error");
+	}
 	if ('a' == s->name[1])
 		ft_handle_keypress(109, s);
 	else if ('l' == s->name[2])
 		ft_handle_keypress(106, s);
 	else if ('r' == s->name[2])
 		ft_handle_keypress(98, s);
+	else if ('c' == s->name[3])
+		ft_handle_keypress(116, s);
 }
 
 int	ft_scale_re(int flag, t_src *s)
 {
-	if (1 == flag)
+	if (101 == flag)
 	{
 		s->serc.max_iter += 1;
 		ft_recompil(s);
 	}
-	if (0 == flag)
+	if (113 == flag)
 	{
 		s->serc.max_iter -= 1;
+		ft_recompil(s);
+	}
+	if (122 == flag)
+	{
+		s->clr += 42;
+		ft_recompil(s);
+	}
+	if (120 == flag)
+	{
+		s->clr -= 42;
 		ft_recompil(s);
 	}
 	return (0);
@@ -77,13 +95,13 @@ int	ft_mouse_hook(int keycode, int x, int y, t_src *s)
 	double	a;
 	double	b;
 
-	if (keycode == 4)
+	if (4 == keycode || 1 == keycode)
 	{
 		a = x / (double)(WH);
 		b = y / (double)(WH);
 		ft_zoom_p(s, a, b);
 	}
-	else if (keycode == 5)
+	else if (5 == keycode)
 	{
 		a = x / (double)(WH);
 		b = y / (double)(WH);

@@ -6,15 +6,15 @@
 #    By: mtiesha < mtiesha@student.21-school.ru>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/23 17:56:30 by mtiesha           #+#    #+#              #
-#    Updated: 2022/03/26 13:12:15 by mtiesha          ###   ########.fr        #
+#    Updated: 2022/03/28 11:35:09 by mtiesha          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = fractol
 
-SRCS = ./src/main.c ./src/keys.c ./src/render.c \
+SRCS = ./src/main.c ./src/touch.c ./src/render.c \
 	./src/julia.c ./src/mandelbrot.c ./src/drow.c ./src/validator.c \
-	./src/burningship.c ./src/utils.c ./src/init.c
+	./src/burningship.c ./src/utils.c ./src/init.c ./src/tricorn.c 
 
 HEADER = ./include/fractol.h
 
@@ -38,7 +38,7 @@ ${NAME} : ${OBJ} Makefile $(HEADER)
 	@$(CC) $(OBJ) ${MLX_LINKED} ${LIBFT_LINKED} -o $(NAME)
 	@echo "\033[32mProject Compiled"
 
-%.o : %.c
+%.o : %.c Makefile ${HEADER}
 	$(CC) ${CFLAGS} -I./include -I./libft -I./mlx_linux -O3 -c $< -o $@
 
 clean :

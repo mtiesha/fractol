@@ -6,7 +6,7 @@
 /*   By: mtiesha < mtiesha@student.21-school.ru>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/23 11:07:19 by mtiesha           #+#    #+#             */
-/*   Updated: 2022/03/26 20:44:18 by mtiesha          ###   ########.fr       */
+/*   Updated: 2022/03/28 10:32:07 by mtiesha          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,6 @@ void	ft_julia(t_src *s, t_serc serc, double p_y, double p_x)
 	mlx_mouse_get_pos(s->mlx, s->mlx_win, &pos, &iter);
 	if (pos != s->pos)
 		ft_sub_get_mouse(s);
-	printf("ff %f     %f\n", s->set_j.r, s->set_j.i);
 	while (p_y < WH)
 	{
 		p_x = 0;

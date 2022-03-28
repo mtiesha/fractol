@@ -6,7 +6,7 @@
 /*   By: mtiesha < mtiesha@student.21-school.ru>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/24 13:30:43 by mtiesha           #+#    #+#             */
-/*   Updated: 2022/03/26 20:05:48 by mtiesha          ###   ########.fr       */
+/*   Updated: 2022/03/28 11:50:35 by mtiesha          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@ static void	ft_init_defolt(t_src *s)
 	int	tmp;
 
 	(*s).serc.max_iter = 50;
+	(*s).clr = 0;
 	mlx_mouse_get_pos(s->mlx, s->mlx_win, &s->pos, &tmp);
 	ft_set_cpx(&(*s).serc.max, 2.0, 2.0);
 	ft_set_cpx(&(*s).serc.min, -2.0, -2.0);

@@ -1,30 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   burningship.c                                      :+:      :+:    :+:   */
+/*   tricorn.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mtiesha < mtiesha@student.21-school.ru>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/24 14:59:28 by mtiesha           #+#    #+#             */
-/*   Updated: 2022/03/28 11:26:19 by mtiesha          ###   ########.fr       */
+/*   Created: 2022/03/23 11:07:19 by mtiesha           #+#    #+#             */
+/*   Updated: 2022/03/28 11:50:48 by mtiesha          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/fractol.h"
 
-void	ft_bs_logic(t_x0y *cxp, t_serc *serc, double *z, int *iter)
+static void	ft_tr_logic(t_x0y *cxp, t_serc *serc, double *z, int *iter)
 {
-	while (cxp->x * cxp->x + cxp->y * cxp->y < 4
-		&& *iter < serc->max_iter)
+	while (cxp->x * cxp->x + cxp->y * cxp->y < 4 && *iter < serc->max_iter)
 	{
 		*z = cxp->x * cxp->x - cxp->y * cxp->y + cxp->cx_r;
-		cxp->y = 2 * fabs(cxp->x * cxp->y) + cxp->cx_i;
+		cxp->y = -2 * cxp->x * cxp->y + cxp->cx_i;
 		cxp->x = *z;
 		(*iter)++;
 	}
 }
 
-void	ft_burningship(t_src *s, t_serc serc, double p_y, double p_x)
+void	ft_tricorn(t_src *s, t_serc serc, double p_y, double p_x)
 {
 	int		iter;
 	double	z;
@@ -40,7 +39,7 @@ void	ft_burningship(t_src *s, t_serc serc, double p_y, double p_x)
 			cxp.x = 0;
 			cxp.y = 0;
 			iter = 0;
-			ft_bs_logic(&cxp, &serc, &z, &iter);
+			ft_tr_logic(&cxp, &serc, &z, &iter);
 			ft_gate_color(iter, s, p_y, p_x);
 			p_y++;
 		}
