@@ -6,7 +6,7 @@
 /*   By: mtiesha < mtiesha@student.21-school.ru>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/23 11:07:19 by mtiesha           #+#    #+#             */
-/*   Updated: 2022/03/26 19:52:19 by mtiesha          ###   ########.fr       */
+/*   Updated: 2022/03/26 20:38:28 by mtiesha          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,8 +63,7 @@ typedef struct s_src
 	char		*name;
 	t_serc		serc;
 	t_cpx		set_j;
-	int			sign_j;
-	int			set_flag;
+	int			pos;
 }	t_src;
 
 /* Validation args */
